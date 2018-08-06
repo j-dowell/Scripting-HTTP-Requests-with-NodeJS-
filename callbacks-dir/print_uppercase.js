@@ -12,3 +12,4 @@ function printUpperCase (html) {
 }
 
 getHTML(requestOptions, printUpperCase);
+
