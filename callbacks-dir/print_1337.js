@@ -6,30 +6,16 @@ var requestOptions = {
 };
 
 function print1337 (html) {
-  function findReplacement(character) {
-    switch(character) {
-      case 'a':
-        return '4';
-      case 'e':
-        return '3';
-      case 'o':
-        return '0';
-      case 'l':
-        return '1';
-      case 's':
-        return '5';
-      case 't':
-        return '7';
-      default:
-        return character;
-      }
-}
 
-var output = "";
+  var chars = {'a':'4','e':'3','o':'0','l':'1','s':'5','t':'7'};
+  var extra = {'ck':'x'};
+  var er = {'3r' : '0r'};
+  var you = {'y0u':'j00'};
 
-html.split('').forEach(function(item) {
-  output += findReplacement(item);
-});
+  output = html.replace(/[aeolst]/g, m => chars[m]);
+  output = output.replace(/(ck)/g, m => extra[m]);
+  output = output.replace(/(3r)/g, m => er[m]);
+  output = output.replace(/(y0u)/g, m => you[m]);
 
 console.log(output);
 
